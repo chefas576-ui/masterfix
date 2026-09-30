@@ -1,28 +1,27 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MASTERFIX | Reparación de Línea Blanca y Aire Acondicionado en Monterrey</title>
+    <title>MASTERFIX - Reparación de Lavadoras, Refrigeradores y Climas en Monterrey</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        brand: {
-                            blue: '#0B2545',
-                            accent: '#0056B3',
-                            orange: '#FF5722',
-                            orangeHover: '#E64A19',
-                            dark: '#111827',
-                            light: '#F8FAFC'
-                        }
+                        brandBlue: '#0F2C59',
+                        brandOrange: '#FF6B00',
+                        brandDark: '#1E293B',
+                        brandLight: '#F8FAFC'
                     },
                     fontFamily: {
-                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        sans: ['Poppins', 'sans-serif'],
                     }
                 }
             }
@@ -30,652 +29,317 @@
     </script>
     <style>
         .gradient-hero {
-            background: linear-gradient(135deg, rgba(11, 37, 69, 0.95) 0%, rgba(0, 86, 179, 0.85) 100%);
-        }
-        .glow-orange {
-            box-shadow: 0 10px 25px -5px rgba(255, 87, 34, 0.4);
-        }
-        .whatsapp-pulse {
-            animation: pulse-ring 2s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
-        }
-        @keyframes pulse-ring {
-            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-            70% { transform: scale(1); box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
-            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+            background: linear-gradient(135deg, rgba(15, 44, 89, 0.95) 0%, rgba(15, 23, 42, 0.9) 100%), url('Front.jpeg');
+            background-size: cover;
+            background-position: center;
         }
     </style>
 </head>
-<body class="bg-slate-50 font-sans text-slate-800 antialiased selection:bg-brand-orange selection:text-white">
+<body class="bg-brandLight text-slate-800 font-sans antialiased">
 
-    <!-- Navbar -->
-    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                <!-- Logo -->
-                <a href="#" class="flex items-center gap-3 group">
-                    <div class="w-12 h-12 rounded-full bg-brand-blue flex items-center justify-center p-1 shadow-md border-2 border-brand-orange group-hover:scale-105 transition-transform">
-                        <!-- SVG Logo similar al emblema con engranajes y herramientas -->
-                        <svg viewBox="0 0 100 100" class="w-full h-full text-white fill-current">
-                            <circle cx="50" cy="50" r="45" fill="none" stroke="#FF5722" stroke-width="6" stroke-dasharray="6,4"/>
-                            <path d="M50 15 A35 35 0 0 1 85 50" fill="none" stroke="#0056B3" stroke-width="8" stroke-linecap="round"/>
-                            <path d="M30 35 H70 V65 H30 Z" fill="#0B2545" rx="5"/>
-                            <circle cx="50" cy="50" r="10" fill="#FF5722"/>
-                            <path d="M65 25 L80 40 L40 80 L25 65 Z" fill="#E64A19"/>
-                        </svg>
-                    </div>
-                    <div class="flex flex-col">
-                        <span class="text-2xl font-black tracking-wider text-brand-blue leading-none">MASTER<span class="text-brand-orange">FIX</span></span>
-                        <span class="text-[10px] font-semibold text-slate-500 tracking-widest uppercase mt-0.5">Servicio Técnico MTY</span>
-                    </div>
-                </a>
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3">
+                <img src="logo.jpeg" alt="MASTERFIX Logo" class="h-14 w-auto rounded-full border-2 border-brandOrange p-0.5 shadow-sm">
+                <span class="font-extrabold text-2xl tracking-wider text-brandBlue">MASTER<span class="text-brandOrange">FIX</span></span>
+            </a>
+            
+            <nav class="hidden md:flex items-center gap-8 font-medium text-slate-700">
+                <a href="#servicios" class="hover:text-brandOrange transition-colors">Servicios</a>
+                <a href="#cotizador" class="hover:text-brandOrange transition-colors">Cotizador Online</a>
+                <a href="#galeria" class="hover:text-brandOrange transition-colors">Evidencias</a>
+                <a href="#cobertura" class="hover:text-brandOrange transition-colors">Zona Monterrey</a>
+            </nav>
 
-                <!-- Desktop Nav -->
-                <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-slate-600">
-                    <a href="#inicio" class="hover:text-brand-orange transition-colors">Inicio</a>
-                    <a href="#servicios" class="hover:text-brand-orange transition-colors">Servicios</a>
-                    <a href="#galeria" class="hover:text-brand-orange transition-colors">Trabajos Reales</a>
-                    <a href="#cotizador" class="hover:text-brand-orange transition-colors">Cotizador MTY</a>
-                    <a href="#contacto" class="hover:text-brand-orange transition-colors">Contacto</a>
-                </nav>
-
-                <!-- WhatsApp Call Action Button -->
-                <div class="hidden sm:flex items-center gap-3">
-                    <a href="https://wa.me/525615960592?text=Hola%20MASTERFIX,%20necesito%20una%20consulta%20técnica." 
-                       target="_blank" 
-                       class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-5 py-2.5 rounded-full font-semibold text-sm shadow-md hover:shadow-lg transition-all duration-200 hover:-translate-y-0.5">
-                        <i class="fa-brands fa-whatsapp text-lg"></i>
-                        <span>WhatsApp Directo</span>
-                    </a>
-                </div>
-
-                <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-slate-600 hover:text-brand-blue hover:bg-slate-100 focus:outline-none">
-                    <i class="fa-solid fa-bars text-2xl"></i>
-                </button>
-            </div>
-        </div>
-
-        <!-- Mobile Menu Dropdown -->
-        <div id="mobile-menu" class="hidden md:hidden border-b border-slate-200 bg-white px-4 pt-2 pb-6 space-y-3">
-            <a href="#inicio" class="block py-2 text-base font-medium text-slate-700 hover:text-brand-orange">Inicio</a>
-            <a href="#servicios" class="block py-2 text-base font-medium text-slate-700 hover:text-brand-orange">Servicios en Monterrey</a>
-            <a href="#galeria" class="block py-2 text-base font-medium text-slate-700 hover:text-brand-orange">Trabajos Reales</a>
-            <a href="#cotizador" class="block py-2 text-base font-medium text-slate-700 hover:text-brand-orange">Cotizador Interactivo</a>
-            <a href="#contacto" class="block py-2 text-base font-medium text-slate-700 hover:text-brand-orange">Contacto</a>
-            <a href="https://wa.me/525615960592" target="_blank" class="flex items-center justify-center gap-2 bg-emerald-600 text-white py-3 rounded-xl font-bold">
-                <i class="fa-brands fa-whatsapp text-xl"></i> Contactar por WhatsApp
+            <a href="https://wa.me/525615960592?text=Hola,%20me%20gustaría%20solicitar%20información%20sobre%20sus%20servicios" 
+               target="_blank" 
+               class="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-semibold px-5 py-2.5 rounded-full shadow-md transition-all hover:scale-105">
+                <i class="fa-brands fa-whatsapp text-xl"></i>
+                <span class="hidden sm:inline">WhatsApp Directo</span>
             </a>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section id="inicio" class="relative bg-brand-blue text-white overflow-hidden py-20 lg:py-28">
-        <!-- Background Pattern -->
-        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]"></div>
-        
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid lg:grid-cols-12 gap-12 items-center">
-                
-                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-orange/20 border border-brand-orange/40 text-brand-orange text-xs font-bold uppercase tracking-wide">
-                        <i class="fa-solid fa-location-dot"></i> Exclusivo Monterrey y Zona Metropolitana
-                    </div>
-
-                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
-                        Reparación Especializada de <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-300">Línea Blanca</span> y Climas
-                    </h1>
-
-                    <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 font-normal">
-                        Diagnóstico preciso, refacciones originales y servicio técnico a domicilio rápido para Refrigeradores, Lavadoras, Minisplits y Módulos Electrónicos en Monterrey.
-                    </p>
-
-                    <!-- Features bullets -->
-                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2 text-xs sm:text-sm font-medium text-slate-200">
-                        <div class="flex items-center justify-center lg:justify-start gap-2 bg-white/5 p-2.5 rounded-lg border border-white/10">
-                            <i class="fa-solid fa-shield-halved text-brand-orange"></i>
-                            <span>Garantía por escrito</span>
-                        </div>
-                        <div class="flex items-center justify-center lg:justify-start gap-2 bg-white/5 p-2.5 rounded-lg border border-white/10">
-                            <i class="fa-solid fa-bolt text-amber-400"></i>
-                            <span>Atención Express</span>
-                        </div>
-                        <div class="flex items-center justify-center lg:justify-start gap-2 bg-white/5 p-2.5 rounded-lg border border-white/10 col-span-2 sm:col-span-1">
-                            <i class="fa-solid fa-microchip text-blue-400"></i>
-                            <span>Reparación de Tarjetas</span>
-                        </div>
-                    </div>
-
-                    <!-- CTA Buttons -->
-                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
-                        <a href="https://wa.me/525615960592?text=Hola%20MASTERFIX,%20quisiera%20agendar%20una%20visita%20técnica%20en%20Monterrey." 
-                           target="_blank" 
-                           class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-brand-orange hover:bg-brand-orangeHover text-white px-8 py-4 rounded-xl font-bold text-base shadow-lg glow-orange transition-all hover:-translate-y-0.5">
-                            <i class="fa-brands fa-whatsapp text-xl"></i>
-                            <span>Cotizar por WhatsApp</span>
-                        </a>
-                        <a href="#cotizador" 
-                           class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-slate-800/80 hover:bg-slate-800 text-slate-200 border border-slate-700 px-8 py-4 rounded-xl font-semibold text-base transition-all">
-                            <i class="fa-solid fa-calculator text-brand-orange"></i>
-                            <span>Calcular Cotización</span>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Hero Graphic / Logo Display -->
-                <div class="lg:col-span-5 flex justify-center">
-                    <div class="relative w-full max-w-md">
-                        <!-- Decorative glow -->
-                        <div class="absolute -inset-1 bg-gradient-to-r from-brand-orange to-blue-600 rounded-3xl blur-2xl opacity-30"></div>
-                        
-                        <div class="relative bg-slate-900 border border-slate-800 p-8 rounded-3xl shadow-2xl flex flex-col items-center text-center">
-                            <div class="w-48 h-48 sm:w-56 sm:h-56 rounded-full bg-white/5 p-4 border-4 border-brand-orange shadow-inner flex items-center justify-center relative mb-6">
-                                <!-- Logo SVG Principal MASTERFIX -->
-                                <svg viewBox="0 0 200 200" class="w-full h-full drop-shadow-md">
-                                    <circle cx="100" cy="100" r="85" fill="none" stroke="#0056B3" stroke-width="12" stroke-dasharray="12 8"/>
-                                    <circle cx="100" cy="100" r="70" fill="none" stroke="#FF5722" stroke-width="8"/>
-                                    <!-- Gear Teeth -->
-                                    <path d="M100 10 L100 25 M100 175 L100 190 M10 100 L25 100 M175 100 L190 100 M35 35 L45 45 M155 155 L165 165 M35 165 L45 155 M155 35 L165 45" stroke="#0B2545" stroke-width="10" stroke-linecap="round"/>
-                                    <!-- Appliance Symbol (Washing Machine/Fridge) -->
-                                    <rect x="65" y="60" width="70" height="80" rx="10" fill="#0B2545" stroke="#FFFFFF" stroke-width="4"/>
-                                    <circle cx="100" cy="105" r="22" fill="#0056B3" stroke="#FFFFFF" stroke-width="3"/>
-                                    <circle cx="100" cy="105" r="12" fill="#38BDF8"/>
-                                    <rect x="75" y="70" width="50" height="10" rx="3" fill="#FF5722"/>
-                                    <!-- Wrench Wrench overlay -->
-                                    <path d="M130 130 L160 160 A12 12 0 0 1 143 177 L113 147 Z" fill="#FF5722"/>
-                                    <circle cx="125" cy="125" r="14" fill="#E64A19"/>
-                                </svg>
-                            </div>
-                            <h3 class="text-2xl font-black text-white tracking-wide">MASTER<span class="text-brand-orange">FIX</span></h3>
-                            <p class="text-xs text-slate-400 uppercase tracking-widest mt-1">Técnicos Certificados en MTY</p>
-                            <div class="mt-4 pt-4 border-t border-slate-800 w-full flex justify-around text-xs text-slate-300">
-                                <div><i class="fa-solid fa-clock text-brand-orange"></i> Lunes - Sábado</div>
-                                <div><i class="fa-solid fa-phone text-emerald-400"></i> 56 1596 0592</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+    <section class="gradient-hero text-white py-20 lg:py-28 px-4 sm:px-6 lg:px-8 relative">
+        <div class="max-w-5xl mx-auto text-center space-y-6">
+            <span class="inline-flex items-center gap-2 bg-brandOrange/20 border border-brandOrange/40 text-brandOrange font-semibold px-4 py-1.5 rounded-full text-sm">
+                <i class="fa-solid fa-location-dot"></i> Servicio Exclusivo en Área Metropolitana de Monterrey
+            </span>
+            <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight leading-tight">
+                Reparación Profesional de <br><span class="text-brandOrange">Electrodomésticos y Climas</span>
+            </h1>
+            <p class="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto font-light">
+                Especialistas en tarjetas electrónicas, refrigeración inverter, lavadoras de carga frontal y mini splits. Diagnóstico preciso a domicilio.
+            </p>
+            <div class="pt-4 flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#cotizador" class="bg-brandOrange hover:bg-orange-600 text-white font-bold px-8 py-4 rounded-xl shadow-lg hover:shadow-orange-500/20 transition-all text-center">
+                    <i class="fa-solid fa-calculator mr-2"></i>Cotizar Reparación
+                </a>
+                <a href="https://wa.me/525615960592?text=Hola%20MASTERFIX,%20necesito%20una%20visita%20técnica%20en%20Monterrey" target="_blank" class="bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold px-8 py-4 rounded-xl backdrop-blur-sm transition-all text-center">
+                    <i class="fa-brands fa-whatsapp text-green-400 text-xl mr-2"></i>Contactar por WhatsApp
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="servicios" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-brand-orange font-bold uppercase text-xs tracking-wider">Cobertura en Monterrey</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-blue mt-2">Nuestros Servicios Especializados</h2>
-                <p class="text-slate-600 mt-4 text-base">Atendemos las principales marcas del mercado (Samsung, LG, Whirlpool, Mabe, Carrier, Mirage, entre otras) directamente en tu domicilio.</p>
+    <!-- Badges / Ventajas -->
+    <section class="py-10 bg-white border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div class="p-4">
+                <i class="fa-solid fa-microchip text-3xl text-brandOrange mb-2"></i>
+                <h4 class="font-bold text-slate-800">Reparación de Tarjetas</h4>
+                <p class="text-xs text-slate-500">Reparación a nivel componente</p>
             </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                
-                <!-- Service 1: Refrigeradores -->
-                <div class="bg-slate-50 rounded-2xl p-6 border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
-                    <div>
-                        <div class="w-14 h-14 rounded-xl bg-blue-100 text-brand-accent flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-accent group-hover:text-white transition-colors">
-                            <i class="fa-solid fa-snowflake"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-3">Refrigeradores</h3>
-                        <ul class="space-y-2 text-sm text-slate-600 mb-6">
-                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-orange mt-1"></i> Sistemas Inverter y Convencionales</li>
-                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-orange mt-1"></i> Carga de gas refrigerante R600 / R134a</li>
-                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-orange mt-1"></i> Cambio de compresores y filtros</li>
-                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-orange mt-1"></i> Corrección de fugas e icemakers</li>
-                        </ul>
-                    </div>
-                    <a href="#cotizador" onclick="selectService('Refrigerador')" class="inline-flex items-center text-xs font-bold text-brand-accent hover:text-brand-orange gap-1">
-                        Cotizar servicio <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-                </div>
-
-                <!-- Service 2: Lavadoras y Secadoras -->
-                <div class="bg-slate-50 rounded-2xl p-6 border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
-                    <div>
-                        <div class="w-14 h-14 rounded-xl bg-orange-100 text-brand-orange flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-orange group-hover:text-white transition-colors">
-                            <i class="fa-solid fa-[#0056B3] fa-soap"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-3">Lavadoras y Secadoras</h3>
-                        <ul class="space-y-2 text-sm text-slate-600 mb-6">
-                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-orange mt-1"></i> Carga frontal y superior</li>
-                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-orange mt-1"></i> Reparación de transmisión y rodamientos</li>
-                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-orange mt-1"></i> Bombas de desagüe y solenoides</li>
-                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-orange mt-1"></i> Mantenimiento de tina y limpieza profunda</li>
-                        </ul>
-                    </div>
-                    <a href="#cotizador" onclick="selectService('Lavadora / Secadora')" class="inline-flex items-center text-xs font-bold text-brand-accent hover:text-brand-orange gap-1">
-                        Cotizar servicio <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-                </div>
-
-                <!-- Service 3: Aires Acondicionados -->
-                <div class="bg-slate-50 rounded-2xl p-6 border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
-                    <div>
-                        <div class="w-14 h-14 rounded-xl bg-cyan-100 text-cyan-600 flex items-center justify-center text-2xl mb-6 group-hover:bg-cyan-600 group-hover:text-white transition-colors">
-                            <i class="fa-solid fa-wind"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-3">Climas / Minisplits</h3>
-                        <ul class="space-y-2 text-sm text-slate-600 mb-6">
-                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-orange mt-1"></i> Mantenimiento preventivo y lavado</li>
-                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-orange mt-1"></i> Detección y sellado de fugas de gas</li>
-                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-orange mt-1"></i> Reemplazo de capacitores y sensores</li>
-                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-orange mt-1"></i> Instalación y diagnóstico de fallas</li>
-                        </ul>
-                    </div>
-                    <a href="#cotizador" onclick="selectService('Aire Acondicionado')" class="inline-flex items-center text-xs font-bold text-brand-accent hover:text-brand-orange gap-1">
-                        Cotizar servicio <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-                </div>
-
-                <!-- Service 4: Tarjetas Electrónicas -->
-                <div class="bg-slate-50 rounded-2xl p-6 border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
-                    <div>
-                        <div class="w-14 h-14 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-2xl mb-6 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
-                            <i class="fa-solid fa-microchip"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-3">Tarjetas Lógicas</h3>
-                        <ul class="space-y-2 text-sm text-slate-600 mb-6">
-                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-orange mt-1"></i> Reparación a nivel componente</li>
-                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-orange mt-1"></i> Reemplazo de mosfets, relés y capacitores</li>
-                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-orange mt-1"></i> Solución a códigos de error (Error PCB)</li>
-                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-orange mt-1"></i> Módulos Inverter para frigoríficos y lavadoras</li>
-                        </ul>
-                    </div>
-                    <a href="#cotizador" onclick="selectService('Tarjeta Electrónica')" class="inline-flex items-center text-xs font-bold text-brand-accent hover:text-brand-orange gap-1">
-                        Cotizar servicio <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-                </div>
-
+            <div class="p-4">
+                <i class="fa-solid fa-shield-halved text-3xl text-brandOrange mb-2"></i>
+                <h4 class="font-bold text-slate-800">Garantía Escrita</h4>
+                <p class="text-xs text-slate-500">Trabajos 100% garantizados</p>
+            </div>
+            <div class="p-4">
+                <i class="fa-solid fa-screwdriver-wrench text-3xl text-brandOrange mb-2"></i>
+                <h4 class="font-bold text-slate-800">Técnicos Certificados</h4>
+                <p class="text-xs text-slate-500">Diagnóstico profesional</p>
+            </div>
+            <div class="p-4">
+                <i class="fa-solid fa-truck-fast text-3xl text-brandOrange mb-2"></i>
+                <h4 class="font-bold text-slate-800">Atención Rápida</h4>
+                <p class="text-xs text-slate-500">Visitas en MTY y MTY Sur</p>
             </div>
         </div>
     </section>
 
-    <!-- Real Work Gallery -->
-    <section id="galeria" class="py-20 bg-slate-900 text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-brand-orange font-bold uppercase text-xs tracking-wider">Evidencia Técnica</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Galería de Trabajos Reales</h2>
-                <p class="text-slate-400 mt-4 text-base">Casos reales de intervención técnica en Monterrey: desde reparación electrónica detallada hasta sustitución de compresores y componentes de refrigeración.</p>
-            </div>
-
-            <!-- Gallery Grid -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                
-                <!-- Item 1: Tarjeta Lógica -->
-                <div class="bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 shadow-md group">
-                    <div class="relative h-64 overflow-hidden bg-slate-950 flex items-center justify-center">
-                        <!-- Card mockup simulating image "logica.jpeg" -->
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent opacity-60 z-10"></div>
-                        <svg viewBox="0 0 400 300" class="w-full h-full object-cover">
-                            <rect width="400" height="300" fill="#0f172a"/>
-                            <!-- PCB Board Drawing -->
-                            <rect x="50" y="30" width="300" height="240" fill="#15803d" rx="10"/>
-                            <!-- Integrated Circuits -->
-                            <rect x="80" y="60" width="80" height="80" fill="#1e293b" rx="4"/>
-                            <rect x="200" y="60" width="120" height="40" fill="#334155" rx="4"/>
-                            <circle cx="100" cy="180" r="25" fill="#94a3b8"/>
-                            <circle cx="160" cy="180" r="25" fill="#94a3b8"/>
-                            <!-- Traces -->
-                            <path d="M120 140 L120 180 M200 100 L200 200 M240 100 L240 220" stroke="#facc15" stroke-width="3" fill="none"/>
-                            <text x="70" y="250" fill="#ffffff" font-family="sans-serif" font-size="12" font-weight="bold">Samsung PCB Inverter Diagnostic</text>
-                        </svg>
-                        <span class="absolute top-4 left-4 z-20 bg-brand-orange text-white text-xs font-bold px-3 py-1 rounded-full shadow">
-                            Electrónica Avanzada
-                        </span>
-                    </div>
-                    <div class="p-5">
-                        <h4 class="font-bold text-lg text-white">Reparación de Tarjeta Lógica</h4>
-                        <p class="text-sm text-slate-400 mt-1">Diagnóstico e intervención de tarjeta electrónica principal de refrigerador Samsung Inverter con fallo de encendido.</p>
-                    </div>
+    <!-- Cotizador Interactivo -->
+    <section id="cotizador" class="py-16 bg-slate-100">
+        <div class="max-w-3xl mx-auto px-4">
+            <div class="bg-white rounded-2xl shadow-xl p-6 sm:p-10 border border-slate-200">
+                <div class="text-center mb-8">
+                    <span class="text-brandOrange font-bold text-sm tracking-widest uppercase">Atención Inmediata</span>
+                    <h2 class="text-3xl font-extrabold text-brandBlue">Cotizador Interactivo</h2>
+                    <p class="text-slate-500 text-sm mt-1">Selecciona los detalles de tu equipo para enviarnos tu solicitud directamente por WhatsApp</p>
                 </div>
 
-                <!-- Item 2: Compresor / Filtro Deshidratador -->
-                <div class="bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 shadow-md group">
-                    <div class="relative h-64 overflow-hidden bg-slate-950 flex items-center justify-center">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent opacity-60 z-10"></div>
-                        <svg viewBox="0 0 400 300" class="w-full h-full object-cover">
-                            <rect width="400" height="300" fill="#1e293b"/>
-                            <!-- Motor Compressor Area -->
-                            <rect x="40" y="100" width="320" height="150" fill="#0f172a" rx="15"/>
-                            <ellipse cx="140" cy="170" rx="60" ry="45" fill="#000000" stroke="#475569" stroke-width="4"/>
-                            <!-- Copper Filter Pipe -->
-                            <path d="M200 170 L280 170" stroke="#b45309" stroke-width="12" stroke-linecap="round"/>
-                            <rect x="220" y="160" width="40" height="20" fill="#f59e0b" rx="5"/>
-                            <!-- Green wire -->
-                            <path d="M100 120 Q150 80 220 120" stroke="#22c55e" stroke-width="4" fill="none"/>
-                            <text x="50" y="270" fill="#94a3b8" font-size="12">Sistema de Compresor & Filtro</text>
-                        </svg>
-                        <span class="absolute top-4 left-4 z-20 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow">
-                            Refrigeración
-                        </span>
-                    </div>
-                    <div class="p-5">
-                        <h4 class="font-bold text-lg text-white">Sustitución de Filtro y Carga de Gas</h4>
-                        <p class="text-sm text-slate-400 mt-1">Instalación de filtro deshidratador de cobre y vacío del sistema para recarga con refrigerante ecológico.</p>
-                    </div>
-                </div>
-
-                <!-- Item 3: Evaporador / Serpentín -->
-                <div class="bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 shadow-md group">
-                    <div class="relative h-64 overflow-hidden bg-slate-950 flex items-center justify-center">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent opacity-60 z-10"></div>
-                        <svg viewBox="0 0 400 300" class="w-full h-full object-cover">
-                            <rect width="400" height="300" fill="#f8fafc"/>
-                            <!-- Evaporator Fins -->
-                            <g fill="#cbd5e1" stroke="#64748b" stroke-width="1">
-                                <rect x="60" y="120" width="280" height="100" rx="4"/>
-                                <!-- Grid lines for fins -->
-                                <line x1="80" y1="120" x2="80" y2="220"/>
-                                <line x1="100" y1="120" x2="100" y2="220"/>
-                                <line x1="120" y1="120" x2="120" y2="220"/>
-                                <line x1="140" y1="120" x2="140" y2="220"/>
-                                <line x1="160" y1="120" x2="160" y2="220"/>
-                                <line x1="180" y1="120" x2="180" y2="220"/>
-                                <line x1="200" y1="120" x2="200" y2="220"/>
-                                <line x1="220" y1="120" x2="220" y2="220"/>
-                                <line x1="240" y1="120" x2="240" y2="220"/>
-                                <line x1="260" y1="120" x2="260" y2="220"/>
-                                <line x1="280" y1="120" x2="280" y2="220"/>
-                                <line x1="300" y1="120" x2="300" y2="220"/>
-                            </g>
-                            <!-- Copper tubing -->
-                            <path d="M50 100 L350 100 M350 110 L50 110" stroke="#b45309" stroke-width="6"/>
-                            <text x="70" y="60" fill="#0f172a" font-size="13" font-weight="bold">Mantenimiento de Evaporador No-Frost</text>
-                        </svg>
-                        <span class="absolute top-4 left-4 z-20 bg-emerald-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow">
-                            Descongelamiento
-                        </span>
-                    </div>
-                    <div class="p-5">
-                        <h4 class="font-bold text-lg text-white">Mantenimiento a Evaporador</h4>
-                        <p class="text-sm text-slate-400 mt-1">Solución a problemas de acumulación excesiva de hielo, cambio de bimetal y resistencia de deshielo.</p>
-                    </div>
-                </div>
-
-                <!-- Item 4: Lavadora Samsung Frontal -->
-                <div class="bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 shadow-md group">
-                    <div class="relative h-64 overflow-hidden bg-slate-950 flex items-center justify-center">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent opacity-60 z-10"></div>
-                        <svg viewBox="0 0 400 300" class="w-full h-full object-cover">
-                            <rect width="400" height="300" fill="#334155"/>
-                            <!-- Front load washer -->
-                            <rect x="100" y="40" width="200" height="230" fill="#94a3b8" rx="12"/>
-                            <rect x="110" y="55" width="180" height="35" fill="#0f172a" rx="4"/>
-                            <circle cx="200" cy="170" r="60" fill="#1e293b" stroke="#0f172a" stroke-width="8"/>
-                            <circle cx="200" cy="170" r="45" fill="#38BDF8" opacity="0.4"/>
-                        </svg>
-                        <span class="absolute top-4 left-4 z-20 bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow">
-                            Lavadoras Digitales
-                        </span>
-                    </div>
-                    <div class="p-5">
-                        <h4 class="font-bold text-lg text-white">Servicio Técnico a Lavadora Digital</h4>
-                        <p class="text-sm text-slate-400 mt-1">Mantenimiento general, nivelación de tina y corrección de vibración en lavadoras de carga frontal Samsung/LG.</p>
-                    </div>
-                </div>
-
-                <!-- Item 5: Refrigerador Duplex Smart -->
-                <div class="bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 shadow-md group">
-                    <div class="relative h-64 overflow-hidden bg-slate-950 flex items-center justify-center">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent opacity-60 z-10"></div>
-                        <svg viewBox="0 0 400 300" class="w-full h-full object-cover">
-                            <rect width="400" height="300" fill="#1e293b"/>
-                            <!-- Side by Side Refrigerator -->
-                            <rect x="120" y="30" width="75" height="240" fill="#475569" rx="4"/>
-                            <rect x="200" y="30" width="85" height="240" fill="#64748b" rx="4"/>
-                            <!-- Handles -->
-                            <rect x="185" y="100" width="5" height="80" fill="#cbd5e1"/>
-                            <rect x="205" y="100" width="5" height="80" fill="#cbd5e1"/>
-                            <!-- Digital Badge -->
-                            <rect x="215" y="45" width="30" height="20" fill="#0284c7" rx="2"/>
-                        </svg>
-                        <span class="absolute top-4 left-4 z-20 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow">
-                            French Door & Duplex
-                        </span>
-                    </div>
-                    <div class="p-5">
-                        <h4 class="font-bold text-lg text-white">Refrigeradores Dúplex / Inverter</h4>
-                        <p class="text-sm text-slate-400 mt-1">Diagnóstico integral de sensores NTC, ventiladores difusores y calibración de temperatura.</p>
-                    </div>
-                </div>
-
-                <!-- Item 6: Garantía de Servicio -->
-                <div class="bg-gradient-to-br from-brand-blue to-slate-800 rounded-2xl p-6 border border-brand-orange/30 flex flex-col justify-between text-center items-center">
-                    <div class="w-20 h-20 rounded-full bg-brand-orange/20 border-2 border-brand-orange flex items-center justify-center text-brand-orange text-3xl mb-4 mt-4">
-                        <i class="fa-solid fa-award"></i>
-                    </div>
+                <form id="quoteForm" onsubmit="sendWhatsApp(event)" class="space-y-6">
                     <div>
-                        <h4 class="text-xl font-bold text-white mb-2">¿Tu equipo falla?</h4>
-                        <p class="text-sm text-slate-300">Te enviamos un técnico calificado el mismo día a cualquier municipio del área metropolitana de Monterrey.</p>
-                    </div>
-                    <a href="https://wa.me/525615960592?text=Hola,%20requiero%20asistencia%20técnica%20de%20urgencia%20en%20Monterrey." target="_blank" class="mt-6 w-full py-3 bg-brand-orange hover:bg-brand-orangeHover text-white rounded-xl font-bold text-sm transition-colors">
-                        <i class="fa-brands fa-whatsapp mr-2"></i> Solicitar Asistencia
-                    </a>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Interactive Calculator Section -->
-    <section id="cotizador" class="py-20 bg-slate-100">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-white rounded-3xl shadow-xl border border-slate-200 overflow-hidden">
-                
-                <div class="bg-brand-blue p-8 text-white text-center relative">
-                    <span class="inline-block px-3 py-1 bg-brand-orange text-white text-xs font-bold uppercase rounded-full mb-2">Servicio Inmediato</span>
-                    <h2 class="text-2xl sm:text-3xl font-extrabold">Cotizador Interactivo de Servicio</h2>
-                    <p class="text-slate-300 text-sm mt-2">Selecciona los datos de tu equipo y recibe una estimación personalizada por WhatsApp en Monterrey.</p>
-                </div>
-
-                <form id="quote-form" class="p-6 sm:p-10 space-y-6">
-                    
-                    <!-- Paso 1: Tipo de Equipo -->
-                    <div>
-                        <label class="block text-sm font-bold text-slate-800 mb-2">
-                            1. Selecciona el Tipo de Equipo:
+                        <label class="block text-sm font-semibold text-slate-700 mb-2">
+                            <i class="fa-solid fa-screwdriver-wrench text-brandOrange mr-1"></i> Tipo de Equipo:
                         </label>
-                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
-                            <button type="button" onclick="setAppliance('Refrigerador')" class="appliance-btn flex flex-col items-center justify-center p-4 rounded-xl border-2 border-slate-200 hover:border-brand-orange text-slate-700 font-semibold text-xs sm:text-sm transition-all text-center">
-                                <i class="fa-solid fa-snowflake text-2xl text-blue-600 mb-2"></i>
-                                <span>Refrigerador</span>
-                            </button>
-                            <button type="button" onclick="setAppliance('Lavadora / Secadora')" class="appliance-btn flex flex-col items-center justify-center p-4 rounded-xl border-2 border-slate-200 hover:border-brand-orange text-slate-700 font-semibold text-xs sm:text-sm transition-all text-center">
-                                <i class="fa-solid fa-soap text-2xl text-brand-orange mb-2"></i>
-                                <span>Lavadora / Secadora</span>
-                            </button>
-                            <button type="button" onclick="setAppliance('Aire Acondicionado')" class="appliance-btn flex flex-col items-center justify-center p-4 rounded-xl border-2 border-slate-200 hover:border-brand-orange text-slate-700 font-semibold text-xs sm:text-sm transition-all text-center">
-                                <i class="fa-solid fa-wind text-2xl text-cyan-600 mb-2"></i>
-                                <span>Minisplit / Aire</span>
-                            </button>
-                            <button type="button" onclick="setAppliance('Tarjeta Electrónica')" class="appliance-btn flex flex-col items-center justify-center p-4 rounded-xl border-2 border-slate-200 hover:border-brand-orange text-slate-700 font-semibold text-xs sm:text-sm transition-all text-center">
-                                <i class="fa-solid fa-microchip text-2xl text-emerald-600 mb-2"></i>
-                                <span>Tarjeta Lógica</span>
-                            </button>
-                        </div>
+                        <select id="appliance" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brandOrange focus:border-brandOrange outline-none transition-all">
+                            <option value="">-- Selecciona el equipo --</option>
+                            <option value="Refrigerador / Duplex / Inverter">Refrigerador / Duplex / Inverter</option>
+                            <option value="Lavadora / Secadora / Centro de Lavado">Lavadora / Secadora / Centro de Lavado</option>
+                            <option value="Aire Acondicionado / Minisplit">Aire Acondicionado / Minisplit</option>
+                            <option value="Tarjeta Lógica / Electrónica">Tarjeta Lógica / Tarjeta Electrónica</option>
+                            <option value="Otro Electrodoméstico">Otro Equipo</option>
+                        </select>
                     </div>
 
-                    <!-- Paso 2: Falla Reportada -->
-                    <div class="grid sm:grid-cols-2 gap-6">
-                        <div>
-                            <label for="issue-select" class="block text-sm font-bold text-slate-800 mb-2">
-                                2. Problema o Falla Principal:
-                            </label>
-                            <select id="issue-select" class="w-full bg-slate-50 border border-slate-300 text-slate-800 rounded-xl p-3 focus:outline-none focus:ring-2 focus:ring-brand-orange text-sm font-medium">
-                                <option value="">-- Selecciona el síntoma --</option>
-                                <option value="No enciende / Muerto totalmente">No enciende / Sin corriente</option>
-                                <option value="No enfría / Enfría muy poco">No enfría / Enfría poco</option>
-                                <option value="Hace ruidos extraños o fuertes">Ruidos extraños / Fuertes</option>
-                                <option value="Tira agua / Fuga de líquido">Fuga de agua / Goteo</option>
-                                <option value="Marca un código de error en pantalla">Marca código de error</option>
-                                <option value="Mantenimiento Preventivo General">Mantenimiento Preventivo</option>
-                                <option value="Otro problema técnico">Otro detalle específico</option>
-                            </select>
-                        </div>
-
-                        <!-- Paso 3: Municipio en MTY -->
-                        <div>
-                            <label for="zone-select" class="block text-sm font-bold text-slate-800 mb-2">
-                                3. Municipio en Área Metropolitana:
-                            </label>
-                            <select id="zone-select" class="w-full bg-slate-50 border border-slate-300 text-slate-800 rounded-xl p-3 focus:outline-none focus:ring-2 focus:ring-brand-orange text-sm font-medium">
-                                <option value="Monterrey (Centro / Sur / Cumbres)">Monterrey</option>
-                                <option value="San Pedro Garza García">San Pedro Garza García</option>
-                                <option value="San Nicolás de los Garza">San Nicolás de los Garza</option>
-                                <option value="Guadalupe">Guadalupe</option>
-                                <option value="Apodaca">Apodaca</option>
-                                <option value="Santa Catarina">Santa Catarina</option>
-                                <option value="General Escobedo">General Escobedo</option>
-                                <option value="Juárez / Cadereyta">Juárez / Cadereyta</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <!-- Mensaje Opcional -->
                     <div>
-                        <label for="comments" class="block text-sm font-bold text-slate-800 mb-2">
-                            4. Comentarios adicionales (Marca o Modelo si lo conoces):
+                        <label class="block text-sm font-semibold text-slate-700 mb-2">
+                            <i class="fa-solid fa-triangle-exclamation text-brandOrange mr-1"></i> Falla Presentada:
                         </label>
-                        <textarea id="comments" rows="3" placeholder="Ej. Refrigerador Samsung Inverter 2 puertas, no congela arriba..." class="w-full bg-slate-50 border border-slate-300 text-slate-800 rounded-xl p-3 focus:outline-none focus:ring-2 focus:ring-brand-orange text-sm"></textarea>
+                        <select id="issue" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brandOrange focus:border-brandOrange outline-none transition-all">
+                            <option value="">-- Selecciona la falla o problema --</option>
+                            <option value="No enciende / Sin energía">No enciende / Se apagó por completo</option>
+                            <option value="No enfria / No congela">No enfría / No congela adecuadamente</option>
+                            <option value="No centrifuga / No lava / Código de error">No centrifuga / Muestra error en pantalla</option>
+                            <option value="Fuga de agua / Fuga de gas">Fuga de agua o tiradero de refrigerante</option>
+                            <option value="Mantenimiento preventivo">Requiere Mantenimiento Preventivo / Limpieza</option>
+                            <option value="Reparación de Tarjeta Lógica">Falla Electrónica / Tarjeta dañada</option>
+                            <option value="Otro problema">Otro tipo de falla</option>
+                        </select>
                     </div>
 
-                    <!-- Botón Enviar Cotización -->
-                    <div class="pt-2">
-                        <button type="button" onclick="sendWhatsAppQuote()" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-4 rounded-xl shadow-lg transition-all flex items-center justify-center gap-3 text-base">
-                            <i class="fa-brands fa-whatsapp text-2xl"></i>
-                            <span>Enviar Cotización por WhatsApp</span>
-                        </button>
-                        <p class="text-center text-xs text-slate-500 mt-2">
-                            <i class="fa-solid fa-lock text-slate-400"></i> Se abrirá WhatsApp con los datos recopilados para atención directa con un técnico de MASTERFIX.
-                        </p>
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-700 mb-2">
+                            <i class="fa-solid fa-map-location-dot text-brandOrange mr-1"></i> Municipio en Monterrey y A.M.:
+                        </label>
+                        <select id="location" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brandOrange focus:border-brandOrange outline-none transition-all">
+                            <option value="">-- Selecciona tu Municipio --</option>
+                            <option value="Monterrey (Centro/Norte/Sur)">Monterrey (Centro/Norte/Sur)</option>
+                            <option value="San Pedro Garza García">San Pedro Garza García</option>
+                            <option value="San Nicolás de los Garza">San Nicolás de los Garza</option>
+                            <option value="Guadalupe">Guadalupe</option>
+                            <option value="Apodaca">Apodaca</option>
+                            <option value="Santa Catarina">Santa Catarina</option>
+                            <option value="Escobedo">General Escobedo</option>
+                            <option value="Juárez / Santiago">Juárez / Santiago</option>
+                        </select>
                     </div>
 
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-700 mb-2">
+                            <i class="fa-solid fa-comment-dots text-brandOrange mr-1"></i> Detalle Adicional (Marca, Modelo o síntoma):
+                        </label>
+                        <textarea id="details" rows="3" placeholder="Ej. Refrigerador Samsung Inverter muestra error en la tarjeta o no congela abajo..." class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brandOrange focus:border-brandOrange outline-none transition-all resize-none"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-4 rounded-xl shadow-lg transition-all flex items-center justify-center gap-3 text-lg">
+                        <i class="fa-brands fa-whatsapp text-2xl"></i>
+                        Enviar Cotización por WhatsApp
+                    </button>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- Contact & Info Section -->
-    <section id="contacto" class="py-16 bg-white border-t border-slate-200">
+    <!-- Galería de Trabajos Reales / Evidencias -->
+    <section id="galeria" class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-3 gap-8 text-center md:text-left">
-                
-                <div class="space-y-3">
-                    <div class="w-12 h-12 rounded-full bg-brand-orange/10 text-brand-orange flex items-center justify-center text-xl mx-auto md:mx-0">
-                        <i class="fa-solid fa-phone"></i>
+            <div class="text-center mb-12">
+                <span class="text-brandOrange font-bold text-sm tracking-widest uppercase">Casos de Éxito</span>
+                <h2 class="text-3xl font-extrabold text-brandBlue">Nuestros Trabajos y Diagnósticos</h2>
+                <p class="text-slate-500 mt-2">Imágenes de revisiones, reparaciones de tarjetas lógicas y mantenimiento en Monterrey</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Foto 1: Frontal Refri -->
+                <div class="bg-slate-50 rounded-2xl overflow-hidden shadow-md border border-slate-100 hover:shadow-lg transition-all group">
+                    <div class="h-64 overflow-hidden bg-slate-200">
+                        <img src="Front.jpeg" alt="Refrigerador Duplex Samsung" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                     </div>
-                    <h3 class="font-bold text-slate-900 text-lg">Atención Telefónica</h3>
-                    <p class="text-sm text-slate-600">Llámanos o envíanos un mensaje directo para programar tu revisión técnica.</p>
-                    <a href="tel:525615960592" class="block text-brand-orange font-extrabold text-lg">56 1596 0592</a>
+                    <div class="p-5">
+                        <h3 class="font-bold text-lg text-brandBlue mb-1">Refrigeradores Modernos & Inverter</h3>
+                        <p class="text-slate-600 text-sm">Servicio técnico para refrigeradores dúplex, tecnología Inverter y sistemas No-Frost.</p>
+                    </div>
                 </div>
 
-                <div class="space-y-3">
-                    <div class="w-12 h-12 rounded-full bg-brand-blue/10 text-brand-blue flex items-center justify-center text-xl mx-auto md:mx-0">
-                        <i class="fa-solid fa-location-dot"></i>
+                <!-- Foto 2: Tarjeta Lógica -->
+                <div class="bg-slate-50 rounded-2xl overflow-hidden shadow-md border border-slate-100 hover:shadow-lg transition-all group">
+                    <div class="h-64 overflow-hidden bg-slate-200">
+                        <img src="logica.jpeg" alt="Reparación de Tarjeta Lógica" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                     </div>
-                    <h3 class="font-bold text-slate-900 text-lg">Zona de Cobertura</h3>
-                    <p class="text-sm text-slate-600">Servicio domiciliario exclusivo en Monterrey, San Pedro, San Nicolás, Guadalupe, Apodaca, Santa Catarina y Escobedo.</p>
+                    <div class="p-5">
+                        <h3 class="font-bold text-lg text-brandBlue mb-1">Reparación de Tarjetas Electrónicas</h3>
+                        <p class="text-slate-600 text-sm">Diagnóstico y cambio de componentes dañados en módulos lógicos para evitar el reemplazo costoso del circuito.</p>
+                    </div>
                 </div>
 
-                <div class="space-y-3">
-                    <div class="w-12 h-12 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-xl mx-auto md:mx-0">
-                        <i class="fa-solid fa-clock"></i>
+                <!-- Foto 3: Sistema Trasero / Compresor -->
+                <div class="bg-slate-50 rounded-2xl overflow-hidden shadow-md border border-slate-100 hover:shadow-lg transition-all group">
+                    <div class="h-64 overflow-hidden bg-slate-200">
+                        <img src="refristras.jpeg" alt="Sistema de Refrigeración y Filtro Secador" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                     </div>
-                    <h3 class="font-bold text-slate-900 text-lg">Horarios de Atención</h3>
-                    <p class="text-sm text-slate-600">Lunes a Sábado: 8:00 AM - 8:00 PM<br>Domingos: Servicio de Urgencias vía WhatsApp.</p>
+                    <div class="p-5">
+                        <h3 class="font-bold text-lg text-brandBlue mb-1">Compresores y Filtros Secadores</h3>
+                        <p class="text-slate-600 text-sm">Carga de gas refrigerante, soldadura de cobre, reemplazo de filtros y sellado de fugas en el sistema sellado.</p>
+                    </div>
                 </div>
 
+                <!-- Foto 4: Evaporador interior -->
+                <div class="bg-slate-50 rounded-2xl overflow-hidden shadow-md border border-slate-100 hover:shadow-lg transition-all group">
+                    <div class="h-64 overflow-hidden bg-slate-200">
+                        <img src="Refri.jpeg" alt="Serpentín Evaporador" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold text-lg text-brandBlue mb-1">Mantenimiento a Evaporadores</h3>
+                        <p class="text-slate-600 text-sm">Limpieza de serpentín, bimetálicos, sensores de deshielo y ventiladores internos de congelación.</p>
+                    </div>
+                </div>
+
+                <!-- Foto 5: Lavadora Samsung Frontal -->
+                <div class="bg-slate-50 rounded-2xl overflow-hidden shadow-md border border-slate-100 hover:shadow-lg transition-all group">
+                    <div class="h-64 overflow-hidden bg-slate-200">
+                        <img src="Lavadora.jpeg" alt="Lavadora Samsung Inverter" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold text-lg text-brandBlue mb-1">Lavadoras y Secadoras Digitales</h3>
+                        <p class="text-slate-600 text-sm">Solución a problemas de exprimido, cambio de bombas, amortiguadores, rodamientos y códigos de error.</p>
+                    </div>
+                </div>
+
+                <!-- Card de Contacto Rápido -->
+                <div class="bg-gradient-to-br from-brandBlue to-slate-900 rounded-2xl p-6 text-white flex flex-col justify-between shadow-md">
+                    <div>
+                        <div class="w-12 h-12 bg-brandOrange/20 rounded-xl flex items-center justify-center text-brandOrange mb-4">
+                            <i class="fa-solid fa-headset text-2xl"></i>
+                        </div>
+                        <h3 class="font-bold text-xl mb-2">¿Tu equipo presenta fallas hoy?</h3>
+                        <p class="text-slate-300 text-sm">Atendemos reportes el mismo día en Monterrey y su zona metropolitana.</p>
+                    </div>
+                    <a href="https://wa.me/525615960592?text=Hola%20MASTERFIX,%20requiero%20asistencia%20técnica%20urgente" target="_blank" class="mt-6 bg-brandOrange hover:bg-orange-600 text-white font-bold py-3 px-4 rounded-xl text-center shadow transition-all block">
+                        Solicitar Visita Técnica
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cobertura Monterrey -->
+    <section id="cobertura" class="py-16 bg-slate-900 text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+                <div>
+                    <span class="text-brandOrange font-bold text-sm tracking-widest uppercase">Área de Servicio</span>
+                    <h2 class="text-3xl font-extrabold mt-1 mb-4">Cobertura Únicamente en Monterrey y Área Metropolitana</h2>
+                    <p class="text-slate-300 mb-6 leading-relaxed">
+                        Brindamos servicio técnico especializado a domicilio directamente en tu hogar o negocio. Contamos con amplia cobertura en las principales zonas de Nuevo León:
+                    </p>
+                    <ul class="grid grid-cols-2 gap-3 text-slate-300 font-medium">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandOrange"></i> Monterrey</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandOrange"></i> San Pedro Garza García</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandOrange"></i> San Nicolás</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandOrange"></i> Guadalupe</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandOrange"></i> Apodaca</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandOrange"></i> Santa Catarina</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandOrange"></i> General Escobedo</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandOrange"></i> Juárez y Santiago</li>
+                    </ul>
+                </div>
+                <div class="bg-white/5 border border-white/10 rounded-2xl p-8 text-center backdrop-blur-sm">
+                    <img src="logo.jpeg" alt="Logo MASTERFIX Monterrey" class="w-28 h-28 mx-auto rounded-full border-4 border-brandOrange mb-4 shadow-lg">
+                    <h3 class="text-2xl font-bold text-white mb-2">MASTERFIX Monterrey</h3>
+                    <p class="text-slate-400 text-sm mb-6">Técnicos especialistas en línea blanca y aire acondicionado</p>
+                    <a href="tel:5615960592" class="inline-flex items-center justify-center gap-2 bg-brandOrange hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl shadow-lg transition-all w-full sm:w-auto">
+                        <i class="fa-solid fa-phone"></i> Llamar al 561 596 0592
+                    </a>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-brand-blue text-slate-400 py-8 border-t border-slate-800 text-sm">
-        <div class="max-w-7xl mx-auto px-4 text-center sm:flex sm:justify-between sm:text-left items-center space-y-4 sm:space-y-0">
-            <div>
-                <p class="text-white font-bold">MASTERFIX &copy; <span id="year"></span> - Todos los derechos reservados.</p>
-                <p class="text-xs text-slate-400 mt-0.5">Especialistas en Línea Blanca y Climas en Monterrey, N.L.</p>
+    <footer class="bg-slate-950 text-slate-400 py-10 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 text-center sm:flex sm:justify-between sm:items-center space-y-4 sm:space-y-0">
+            <div class="flex items-center justify-center gap-3">
+                <img src="logo.jpeg" alt="MASTERFIX Logo" class="w-8 h-8 rounded-full border border-brandOrange">
+                <span class="font-bold text-white text-lg">MASTERFIX</span>
             </div>
-            <div class="flex justify-center gap-6 text-lg">
-                <a href="https://wa.me/525615960592" target="_blank" class="hover:text-emerald-400"><i class="fa-brands fa-whatsapp"></i></a>
-                <a href="#inicio" class="hover:text-brand-orange"><i class="fa-solid fa-arrow-up"></i></a>
-            </div>
+            <p class="text-sm">&copy; <script>document.write(new Date().getFullYear())</script> MASTERFIX - Servicios de Reparación Técnica en Monterrey, N.L.</p>
         </div>
     </footer>
 
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/525615960592?text=Hola%20MASTERFIX,%20quisiera%20solicitar%20un%20diagnóstico%20a%20domicilio%20en%20Monterrey." 
+    <!-- Botón Flotante de WhatsApp -->
+    <a href="https://wa.me/525615960592?text=Hola%20MASTERFIX,%20me%20gustaría%20solicitar%20un%20diagnóstico" 
        target="_blank" 
-       class="fixed bottom-6 right-6 z-50 w-16 h-16 bg-emerald-500 hover:bg-emerald-600 text-white rounded-full flex items-center justify-center shadow-2xl whatsapp-pulse transition-transform hover:scale-110"
-       title="Contactar por WhatsApp">
+       class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-2xl z-50 flex items-center justify-center hover:scale-110 transition-transform duration-300"
+       aria-label="Contactar por WhatsApp">
         <i class="fa-brands fa-whatsapp text-3xl"></i>
     </a>
 
+    <!-- JavaScript del Cotizador -->
     <script>
-        // Set dynamic year
-        document.getElementById('year').innerText = new Date().getFullYear();
-
-        // Mobile Menu Toggle
-        const btn = document.getElementById('mobile-menu-btn');
-        const menu = document.getElementById('mobile-menu');
-        btn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
-        });
-
-        // App State
-        let selectedAppliance = 'Refrigerador';
-
-        // Highlight default selected appliance button
-        document.addEventListener('DOMContentLoaded', () => {
-            setAppliance('Refrigerador');
-        });
-
-        function setAppliance(applianceName) {
-            selectedAppliance = applianceName;
-            const buttons = document.querySelectorAll('.appliance-btn');
+        function sendWhatsApp(event) {
+            event.preventDefault();
             
-            buttons.forEach(button => {
-                if (button.innerText.includes(applianceName)) {
-                    button.classList.add('border-brand-orange', 'bg-orange-50', 'ring-2', 'ring-brand-orange/30');
-                    button.classList.remove('border-slate-200');
-                } else {
-                    button.classList.remove('border-brand-orange', 'bg-orange-50', 'ring-2', 'ring-brand-orange/30');
-                    button.classList.add('border-slate-200');
-                }
-            });
-        }
-
-        function selectService(type) {
-            setAppliance(type);
-        }
-
-        // WhatsApp Quote Builder
-        function sendWhatsAppQuote() {
-            const issue = document.getElementById('issue-select').value;
-            const zone = document.getElementById('zone-select').value;
-            const comments = document.getElementById('comments').value;
-
-            if (!issue) {
-                alert('Por favor selecciona la falla o problema de tu equipo.');
-                return;
-            }
-
             const phone = "525615960592";
-            
-            let message = `*SOLICITUD DE COTIZACIÓN - MASTERFIX MTY*\n\n`;
-            message += `🛠️ *Equipo:* ${selectedAppliance}\n`;
+            const appliance = document.getElementById('appliance').value;
+            const issue = document.getElementById('issue').value;
+            const location = document.getElementById('location').value;
+            const details = document.getElementById('details').value;
+
+            let message = `*SOLICITUD DE COTIZACIÓN - MASTERFIX MONTERREY*\n\n`;
+            message += `🔧 *Equipo:* ${appliance}\n`;
             message += `⚠️ *Falla:* ${issue}\n`;
-            message += `📍 *Ubicación / Municipio:* ${zone}\n`;
-            if (comments.trim() !== '') {
-                message += `📝 *Detalles:* ${comments}\n`;
+            message += `📍 *Ubicación:* ${location}\n`;
+            if (details.trim() !== '') {
+                message += `📝 *Detalles adicionales:* ${details}\n`;
             }
-            message += `\nQuedo a la espera de su respuesta y disponibilidad para agendar revisión.`;
+            message += `\nHola, me gustaría agendar una revisión o conocer la cotización aproximada.`;
 
             const encodedMessage = encodeURIComponent(message);
-            const whatsappUrl = `https://wa.me/${phone}?text=${encodedMessage}`;
-
-            window.open(whatsappUrl, '_blank');
+            window.open(`https://wa.me/${phone}?text=${encodedMessage}`, '_blank');
         }
     </script>
 </body>
